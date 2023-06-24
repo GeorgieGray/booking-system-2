@@ -10,8 +10,10 @@ class SignupForm(UserCreationForm):
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control mb-3' }))
     
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(SignupForm, self).__init__(*args, **kwargs)
         self.fields['password1'].label = "Password"
+        del self.fields['password2']
+        self.fields['password1'].help_text = None
 
     class Meta:
         model=User
@@ -20,4 +22,4 @@ class SignupForm(UserCreationForm):
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control' }))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control mb-3' }))
-    remember_me = forms.BooleanField()
+    remember_me = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
