@@ -27,6 +27,10 @@ class Login(FormView):
                 password=form.cleaned_data["password"],
             )
             login(request, user)
+            
+            remember_me = form.cleaned_data["remember_me"],
+            if not remember_me:
+                request.session.set_expiry(0)
 
             if request.GET.__contains__('next'):
                 return redirect(request.GET.__getitem__('next'))
