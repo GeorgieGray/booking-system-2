@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% include "nav.html" category="login" %}
+{% endblock %}
+
+{% block main %}
+<h1 class="mb-3">
+    Login
+</h1>
+<form method="POST" novalidate>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login" class="btn btn-primary" />
+</form>
+{% endblock %}
