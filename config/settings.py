@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "swqzmfnu",
+        "NAME": "uiyynqxp",
         "USER": os.environ.get("DB_USER"),
         "PASSWORD": os.environ.get("DB_PW"),
         "HOST": "lucky.db.elephantsql.com",
@@ -136,3 +136,5 @@ STATICFILES_DIRS = [
     "config/static"
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+AUTH_USER_MODEL = 'user.User'
