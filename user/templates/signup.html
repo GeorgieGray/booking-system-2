@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% include "nav.html" category="signup" %}
+{% endblock %}
+
+{% block main %}
+<h1 class="mb-3">
+    Create an account
+</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" value="Create account">
+</form>
+{% endblock %}
