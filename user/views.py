@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.views.generic.edit import FormView
 from .forms import SignupForm, LoginForm
+from django.contrib.auth import authenticate, login
 
 class Signup(FormView):
     template_name = "signup.html"
@@ -27,7 +28,7 @@ class Login(FormView):
                 password=form.cleaned_data["password"],
             )
             login(request, user)
-            
+
             remember_me = form.cleaned_data["remember_me"],
             if not remember_me:
                 request.session.set_expiry(0)
