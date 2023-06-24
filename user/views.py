@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import SignupForm
+from .forms import SignupForm, LoginForm
 
 class Signup(FormView):
     template_name = "signup.html"
@@ -12,3 +12,7 @@ class Signup(FormView):
             login(self.request, user)
         
         return super(Signup, self).form_valid(form)
+
+class Login(FormView):
+    template_name="login.html"
+    form_class = LoginForm
