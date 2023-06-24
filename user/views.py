@@ -16,3 +16,21 @@ class Signup(FormView):
 class Login(FormView):
     template_name="login.html"
     form_class = LoginForm
+
+    def post(self, request):
+        form = self.get_form()
+        if form.is_valid():
+            form.clean()
+            user = authenticate(
+                request, 
+                username=form.cleaned_data["username"], 
+                password=form.cleaned_data["password"],
+            )
+            login(request, user)
+
+            if request.GET.__contains__('next'):
+                return redirect(request.GET.__getitem__('next'))
+
+            return redirect("booking")
+        else:            
+            return redirect("login")
