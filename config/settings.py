@@ -14,6 +14,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 import json
+import django_heroku
 
 load_dotenv()
 
@@ -138,3 +139,5 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 AUTH_USER_MODEL = 'user.User'
+
+django_heroku.settings(locals())
