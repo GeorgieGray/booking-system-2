@@ -2,7 +2,7 @@
 
 ![devices](https://i.imgur.com/Uut5HeV.png)
 
-[Lettuce Eat](https://ci-booking-system.herokuapp.com/) is a digital booking system for restaurants.
+[Lettuce Eat](https://ci-booking-system-2-b046cfde46eb.herokuapp.com/) is a digital booking system for restaurants.
 
 This is a recreation of [Lettuce Eat (Flask)](https://github.com/GeorgieGray/booking-system). This version uses Django.
 
@@ -15,7 +15,7 @@ The web application frontend has four high-level views:
 - Table booking
 
 The website is hosted using Heroku, see it here:  
-TODO
+https://ci-booking-system-2-b046cfde46eb.herokuapp.com/
 
 ## Table of Contents
 - [Target Demographic](#target-demographic)
@@ -138,32 +138,13 @@ Here is my regression testing method:
 #### W3C Jigsaw
 There is an error here but it belongs to Bootstrap, so is out of my control. Otherwise good.
 
-https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fci-booking-system.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
+https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fci-booking-system-2-b046cfde46eb.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
 
 #### W3C Markup Validator
 Info + minor warning, otherwise good.
-https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system.herokuapp.com%2F
-
+https://validator.w3.org/nu/?doc=https%3A%2F%2Fci-booking-system-2-b046cfde46eb.herokuapp.com%2F
 
 ## Citations & Credits
-
-### Learning resources
-- Heroku documentation
-  - https://devcenter.heroku.com/articles/heroku-cli
-  - https://devcenter.heroku.com/articles/git
-
-- Flask documentation
-  - https://flask.palletsprojects.com/en/2.2.x/
-
-- Flask login documentation
-  - https://flask-login.readthedocs.io/en/latest/
-
-- Digital ocean learning resources
-  - This provided a good example to validate my learning against
-  - https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
-
-- SQLAlchemy documentation
-  - https://docs.sqlalchemy.org/en/20/
 
 ### Free assets
 - App logo source
