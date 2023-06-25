@@ -28,3 +28,7 @@ class BookingDashboard(CreateView):
         except IntegrityError:
             form.add_error(NON_FIELD_ERRORS, "This table is not available")
             return self.form_invalid(form)
+
+    def get_context_data(self, **kwargs):
+        kwargs['object_list'] = Booking.objects.filter(user=self.request.user)
+        return super(BookingDashboard, self).get_context_data(**kwargs)
