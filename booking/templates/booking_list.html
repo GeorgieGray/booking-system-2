@@ -11,7 +11,7 @@
     <div class="card-body">
         <h5 class="card-title">Dinner for {{ booking.group_size }}</h5>
         <p class="card-text">You're booked in for dinner at table {{ booking.table.table_number }}</p>
-        <a href="#" class="btn btn-outline-danger delete-booking" data-id="{{ booking.id }}">Delete</a>
+        <a href="{% url 'booking_delete' booking.id %}" class="btn btn-outline-danger delete-booking">Delete</a>
     </div>
     </div>
     {% endfor %}
