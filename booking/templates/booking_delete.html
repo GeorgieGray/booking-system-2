@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-<form method="post">
+<form method="post" style="max-width: 500px;">
     {% csrf_token %}
     <h3>You are deleting your booking @ {{ object.time_verbose }} on {{ object.date }}?</h3>
     <p>Are you sure?</p>
