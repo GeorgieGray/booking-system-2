@@ -1,0 +1,18 @@
+<h2>Your Bookings</h2>
+<div>
+    {% if object_list|length < 1 %}
+    <p>
+        No bookings to show
+    </p>
+    {% endif %}
+    {% for booking in object_list %}
+    <div class="card mb-3">
+    <h5 class="card-header">Booking: {{ booking.date }} @ {{ booking.time }}:00</h5>
+    <div class="card-body">
+        <h5 class="card-title">Dinner for {{ booking.group_size }}</h5>
+        <p class="card-text">You're booked in for dinner at table {{ booking.table.table_number }}</p>
+        <a href="#" class="btn btn-outline-danger delete-booking" data-id="{{ booking.id }}">Delete</a>
+    </div>
+    </div>
+    {% endfor %}
+</div>
