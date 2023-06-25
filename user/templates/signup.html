@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-<h1 class="mb-3">
-    Create an account
-</h1>
-<form method="post">
+<form method="post" class="col-lg-6">
+    <h1 class="mb-3 ">
+        Create an account
+    </h1>
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" class="btn btn-primary" value="Create account">

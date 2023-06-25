@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-<h1 class="mb-3">
-    Login
-</h1>
-<form method="POST" novalidate>
+<form method="POST" novalidate class="col-lg-6">
+    <h1 class="mb-3 ">
+        Login
+    </h1>
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Login" class="btn btn-primary" />
