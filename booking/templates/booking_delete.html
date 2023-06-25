@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% include "nav.html" with category="booking"%}
+{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <h3>You are deleting your booking @ {{ object.time_verbose }} on {{ object.date }}?</h3>
+    <p>Are you sure?</p>
+    {{ form }}
+    <input type="submit" class=" btn btn-primary mt-3" value="Delete booking">
+</form>
+{% endblock %}
