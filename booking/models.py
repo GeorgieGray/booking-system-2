@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+import datetime
+from django.core.validators import MinValueValidator
 
 class Restaurant(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -21,7 +23,7 @@ class Table(models.Model):
     )
 
     def __str__(self):
-        return "Table " + str(self.table_number) + " @ " + self.restaurant.name
+        return "Table " + str(self.table_number)
 
 class Booking(models.Model):
     BOOKING_TIMES = [
@@ -54,7 +56,7 @@ class Booking(models.Model):
     id = models.BigAutoField(primary_key=True)
     group_size = models.IntegerField()
     time = models.CharField(max_length=2, choices=BOOKING_TIMES)
-    date = models.DateField(auto_now=False, auto_now_add=False)
+    date = models.DateField(auto_now=False, auto_now_add=False, validators=[MinValueValidator(datetime.date.today)])
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
