@@ -19,3 +19,12 @@ class BookingDashboard(CreateView):
         form.fields['table'].widget.attrs['class'] = 'form-control'
 
         return form
+
+    def form_valid(self, form):
+        booking = form.save(commit=False)
+        booking.user = self.request.user
+        try:
+            return super(BookingDashboard, self).form_valid(form)
+        except IntegrityError:
+            form.add_error(NON_FIELD_ERRORS, "This table is not available")
+            return self.form_invalid(form)
