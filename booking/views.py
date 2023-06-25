@@ -1,6 +1,7 @@
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, DeleteView
 from .models import Booking
 from django.contrib.admin.widgets import AdminDateWidget
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 class Home(TemplateView):
     template_name = "home.html"
@@ -32,3 +33,11 @@ class BookingDashboard(CreateView):
     def get_context_data(self, **kwargs):
         kwargs['object_list'] = Booking.objects.filter(user=self.request.user)
         return super(BookingDashboard, self).get_context_data(**kwargs)
+
+class DeleteBooking(UserPassesTestMixin, DeleteView):
+    def test_func(self):
+        booking = Booking.objects.get(pk=self.kwargs['pk'])
+        return self.request.user.id == booking.user.id
+    template_name="booking_delete.html"
+    model = Booking
+    success_url="/booking"
