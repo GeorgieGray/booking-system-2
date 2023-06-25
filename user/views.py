@@ -1,6 +1,8 @@
 from django.views.generic.edit import FormView
 from .forms import SignupForm, LoginForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.views import View
+from django.shortcuts import redirect
 
 class Signup(FormView):
     template_name = "signup.html"
@@ -23,19 +25,23 @@ class Login(FormView):
         if form.is_valid():
             form.clean()
             user = authenticate(
-                request, 
-                username=form.cleaned_data["username"], 
+                email=form.cleaned_data["username"], 
                 password=form.cleaned_data["password"],
             )
             login(request, user)
 
-            remember_me = form.cleaned_data["remember_me"],
+            remember_me = form.cleaned_data["remember_me"]
             if not remember_me:
                 request.session.set_expiry(0)
 
             if request.GET.__contains__('next'):
                 return redirect(request.GET.__getitem__('next'))
 
-            return redirect("booking")
+            return redirect("/booking")
         else:            
             return redirect("login")
+
+class Logout(View):
+    def get(self, request):
+        logout(request)
+        return redirect("home")
