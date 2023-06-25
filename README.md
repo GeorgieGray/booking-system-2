@@ -133,7 +133,7 @@ Here is my regression testing method:
 
 ### Third party
 #### Lighthouse
-![](https://i.imgur.com/AWyKxqo.png)
+![](https://i.imgur.com/0GSvtJV.gif)
 
 #### W3C Jigsaw
 There is an error here but it belongs to Bootstrap, so is out of my control. Otherwise good.
