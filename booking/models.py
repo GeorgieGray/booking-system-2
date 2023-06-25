@@ -7,6 +7,9 @@ class Restaurant(models.Model):
     phone_number = models.CharField(max_length=32)
     name = models.CharField(max_length=32)
 
+    def __str__(self):
+        return self.name
+
 class Table(models.Model):
     id = models.BigAutoField(primary_key=True)
     max_seats = models.PositiveIntegerField()
@@ -16,6 +19,9 @@ class Table(models.Model):
         "Restaurant",
         on_delete=models.CASCADE
     )
+
+    def __str__(self):
+        return "Table " + str(self.table_number) + " @ " + self.restaurant.name
 
 class Booking(models.Model):
     BOOKING_TIMES = [
@@ -58,6 +64,12 @@ class Booking(models.Model):
         on_delete=models.CASCADE
     )
     note = models.TextField(blank=True)
+
+    def time_verbose(self):
+        return dict(Booking.BOOKING_TIMES)[self.time]
    
     class Meta:
         ordering = ["date", "time"]
+
+    def __str__(self):
+        return "table " + str(self.table.table_number) + " @ " + self.date.strftime('%m/%d/%Y') + " / " + self.time_verbose() + " (" + self.table.restaurant.name + ")"
