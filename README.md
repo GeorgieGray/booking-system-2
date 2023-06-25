@@ -22,8 +22,6 @@ TODO
 - [Project planning](#project-planning)
 - [Project management](#project-management)
 - [Features](#features)
-- [Technology](#technology)
-- [Project Structure](#project-structure)
 - [Local Development](#local-development)
 - [Deployment](#deployment)
 - [Testing](#testing)
