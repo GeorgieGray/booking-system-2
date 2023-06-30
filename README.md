@@ -6,9 +6,9 @@
 
 This is a recreation of [Lettuce Eat (Flask)](https://github.com/GeorgieGray/booking-system). This version uses Django.
 
-Restaurant owners enter data about their restuarant and customers can express interest in booking a table, this is not a complete booking solution. In this version restaurant owners must manage table availability manually, contacting customers where they're unable to support a booking.
+Restaurant owners enter data about their Restaurant and customers can express interest in booking a table, this is not a complete booking solution. In this version restaurant owners must manage table availability manually, contacting customers where they're unable to support a booking.
 
-This kind of booking application is desireable for restuarant owners because customers are not turned away due to unavailability of tables in the booking app, instead they express interest and the restuarant owner gets the lead plus an opportunity to course correct when they cannot meet the customers expectations exactly, for example suggesting another time or table.
+This kind of booking application is desireable for Restaurant owners because customers are not turned away due to unavailability of tables in the booking app, instead they express interest and the Restaurant owner gets the lead plus an opportunity to course correct when they cannot meet the customers expectations exactly, for example suggesting another time or table.
 
 The web application frontend has four high-level views:
 - Landing view
@@ -32,10 +32,10 @@ https://ci-booking-system-2-b046cfde46eb.herokuapp.com/
 - [Citations & Credits](#citations--credits)
 
 ## Target Demographic
-- Restuarant owners looking to modernise their booking experience
-- Restuarant owners looking to improve their online advertising conversion rate, by lowering the barrier for customers to give them business
-- Restuarant customers who dislike phone conversations (book online instead)
-- Restuarant customers who are technology-aware
+- Restaurant owners looking to modernise their booking experience
+- Restaurant owners looking to improve their online advertising conversion rate, by lowering the barrier for customers to give them business
+- Restaurant customers who dislike phone conversations (book online instead)
+- Restaurant customers who are technology-aware
 
 ## Project planning
 This section discusses my approach to thinking about and designing the system. The diagrams I created are mostly accurate to the final system, some small changes were made as I made further discoveries during development.
@@ -46,7 +46,7 @@ An example of a small change is how the booking view moved from it's originally 
 
 I started this project by exploring what functionality a user would be looking for in a restaurant booking system: what are the things they'll want to know about the restaurant, and how should they experience the booking journey.
 
-During this phase I also considered which constraints would be meaningful for a restuarant owner to be able to set. For example: A restaurant owner may want to limit time spent per table.
+During this phase I also considered which constraints would be meaningful for a Restaurant owner to be able to set. For example: A restaurant owner may want to limit time spent per table.
 
 ### Data model
 ![](https://i.imgur.com/DOEj8hJ.jpg)
