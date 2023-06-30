@@ -41,6 +41,8 @@ https://ci-booking-system-2-b046cfde46eb.herokuapp.com/
 This section discusses my approach to thinking about and designing the system. The diagrams I created are mostly accurate to the final system, some small changes were made as I made further discoveries during development.
 
 An example of a small change is how the booking view moved from it's originally planned place in the landing view to a private dedicated booking view.
+
+Due to the simplified functionality in this (the django) version of the app, some of the design that was done early in the project regarding the data model wasn't used. For example restaurant open/closing days and times.
 ### Mind map
 ![](https://i.imgur.com/zWQv8oC.jpg)
 
