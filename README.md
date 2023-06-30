@@ -6,7 +6,9 @@
 
 This is a recreation of [Lettuce Eat (Flask)](https://github.com/GeorgieGray/booking-system). This version uses Django.
 
-Restaurant owners enter data about their restuarant and customers book tables. In this version restaurant owners must manage table availability manually, contacting customers where they're unable to support a booking.
+Restaurant owners enter data about their restuarant and customers can express interest in booking a table, this is not a complete booking solution. In this version restaurant owners must manage table availability manually, contacting customers where they're unable to support a booking.
+
+This kind of booking application is desireable for restuarant owners because customers are not turned away due to unavailability of tables in the booking app, instead they express interest and the restuarant owner gets the lead plus an opportunity to course correct when they cannot meet the customers expectations exactly, for example suggesting another time or table.
 
 The web application frontend has four high-level views:
 - Landing view
@@ -64,7 +66,28 @@ From here I considered the key functionalities of the system with respect to the
 Finally I imagined how the user experience would be, and how the previously considered functionalities would be exposed to the end-user.
 
 ## Project management
-- See [Github Project](https://github.com/users/GeorgieGray/projects/1)
+The project is managed using github projects, issues and milestones.
+
+Each issue is titled as a user story, and in the description of the issue you will find acceptance criteria. In some instances where a change of plan occured, or some work was cancelled you will find commented in the issue with context.
+
+### Prioritisation
+There are four priority levels:
+- CRITICAL: must have feature
+- HIGH: important feature, but not necessarily critical to the user journey
+- LOW: unimportant features which might be considered later, or during a lull in the project
+- NICE TO HAVE: features intended to improve user experience but inconsiequential if not included
+
+### Epics
+There are four epics, see them here:
+https://github.com/GeorgieGray/booking-system-2/milestones
+
+### Sprints
+Work was split into three sprints, due to limitations of github projects tasks are assignd to sprints using labels.
+
+See the sprints below:
+- [Sprint 1](https://github.com/GeorgieGray/booking-system-2/issues?q=is%3Aissue+label%3A%22SPRINT%3A+1%22+)
+- [Sprint 2](https://github.com/GeorgieGray/booking-system-2/issues?q=is%3Aissue+label%3A%22SPRINT%3A+2%22+)
+- [Sprint 3](https://github.com/GeorgieGray/booking-system-2/issues?q=is%3Aissue+label%3A%22SPRINT%3A+3%22+)
 
 ## Features
 ### Landing view
